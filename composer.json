@@ -1,0 +1,24 @@
+{
+    "name": "kwattro/ghc",
+    "type": "application",
+    "description": "Github Repository Forks Analysis with Neo4j",
+    "keywords": ["php", "neo4j", "github", "archive", "forks"],
+    "time": "2014-07-25",
+    "license": "MIT",
+    "repositories": [
+      {
+         "type": "vcs",
+         "url": "/Users/ikwattro/www/kwark/"
+      }
+   ],
+    "require": {
+        "symfony/finder": "*",
+        "kwattro/kwark": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Kwattro\\Gh4j\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
