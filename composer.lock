@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8e90e67c65b0dc08ef608c8993d6cb08b94b4b1a"
+                "reference": "119e11a7503d92dc5624a0e833d11a9ebba6d832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8e90e67c65b0dc08ef608c8993d6cb08b94b4b1a",
-                "reference": "8e90e67c65b0dc08ef608c8993d6cb08b94b4b1a",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/119e11a7503d92dc5624a0e833d11a9ebba6d832",
+                "reference": "119e11a7503d92dc5624a0e833d11a9ebba6d832",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-07-23 19:40:03"
+            "time": "2014-07-30 19:45:04"
         },
         {
             "name": "guzzlehttp/streams",
@@ -129,7 +129,7 @@
             "source": {
                 "type": "git",
                 "url": "/Users/ikwattro/www/kwark",
-                "reference": "0875db55c5dda27b9f0995a2dffb638074fab44a"
+                "reference": "2e182e592bd64da7662ff1a5c89fa4e25b4a4d67"
             },
             "require": {
                 "guzzlehttp/guzzle": "~4.0"
@@ -154,7 +154,7 @@
                 "php",
                 "rest"
             ],
-            "time": "2014-07-29 20:19:47"
+            "time": "2014-07-29 23:14:50"
         },
         {
             "name": "symfony/finder",

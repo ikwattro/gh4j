@@ -35,13 +35,18 @@ class Gh4j
 			if ($loader instanceof BaseEventLoader) {
 				$query = $loader->getEventLoadQuery($ev);
 				if ($inStack) {
-				return $this->connector->send($query);
+				return $this->connector->addToParallelStack($query);
 			}
 
 			return $this->connector->sendCypherQuery($query);
 
 			}
 		}
+	}
+
+	public function flushStack()
+	{
+		return $this->connector->flushParallelStack();
 	}
 
 	public function flush()

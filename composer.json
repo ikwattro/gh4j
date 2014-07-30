@@ -5,12 +5,6 @@
     "keywords": ["php", "neo4j", "github", "archive", "forks"],
     "time": "2014-07-25",
     "license": "MIT",
-    "repositories": [
-      {
-         "type": "vcs",
-         "url": "/Users/ikwattro/www/kwark/"
-      }
-   ],
     "require": {
         "symfony/finder": "*",
         "kwattro/kwark": "*"
