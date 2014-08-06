@@ -48,8 +48,6 @@ class ForkEventLoader extends BaseEventLoader
 
 		$this->addAliases(array('fork', 'bro', 'br'));
 
-		$q = $this->generateAliases($q);
-
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}
 }

@@ -1,3 +1,6 @@
 vendor/
 data/
 index.php
+/.idea
+test.php
+tests/_reports/*

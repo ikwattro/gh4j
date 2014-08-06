@@ -64,11 +64,6 @@ class IssueCommentEventLoader extends BaseEventLoader
 
 		}
 
-		$this->addAliases(array('issue', 'repo', 'comment', 'owner', 'pr'));
-
-		$q = $this->generateAliases($q);
-		
-
 		$q = $this->getCommonEventPayloadQuery().' '.$q;
 
 		return $q;

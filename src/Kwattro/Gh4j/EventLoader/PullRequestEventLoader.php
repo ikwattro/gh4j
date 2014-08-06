@@ -96,10 +96,6 @@ class PullRequestEventLoader extends BaseEventLoader
 		MERGE (original_repo_alias)-[:OWNED_BY]->(original_repo_owner_alias)
 		MERGE (pr_alias)-[:PR_ON_REPO]->(original_repo_alias)';
 
-		$this->addAliases(array('pr','pr_opener', 'pr_opening_event', 'opener', 'original_repo_owner', 'original_repo'));
-
-		$q = $this->generateAliases($q);
-
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}
 }

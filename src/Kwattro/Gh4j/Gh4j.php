@@ -5,7 +5,7 @@ namespace Kwattro\Gh4j;
 use Kwattro\Gh4j\Loader;
 use Kwattro\Gh4j\EventLoader\BaseEventLoader;
 use Kwattro\Gh4j\Validator\JSONValidator;
-use Kwattro\Kwark\Kwark;
+use Kwark\Kwark;
 
 class Gh4j
 {
@@ -16,7 +16,9 @@ class Gh4j
 
 	public function __construct()
 	{
-		$this->connector = new Kwark(array('host'=>'10.0.2.2'));
+		$this->connector = new Kwark();
+        $this->connector->initalizeApi();
+
 		$this->loader = new Loader();
 		$this->validator = new JSONValidator();
 	}

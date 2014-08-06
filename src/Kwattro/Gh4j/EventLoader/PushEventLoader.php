@@ -60,10 +60,6 @@ class PushEventLoader extends BaseEventLoader
 			$q .= ' SET repo_alias :Fork';
 		}
 
-		$this->addAliases(array('fork', 'repo', 'branch', 'owner'));
-
-		$q = $this->generateAliases($q);
-
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}
 }
