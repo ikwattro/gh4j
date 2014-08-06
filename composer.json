@@ -13,7 +13,7 @@
    ],
     "require": {
         "symfony/finder": "*",
-        "neoxygen/kwark": "dev-master"
+        "neoxygen/kwark": "1.0.*@dev"
     },
     "autoload": {
         "psr-0": {
