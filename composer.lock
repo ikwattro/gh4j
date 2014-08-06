@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5e7547356832adda270359166e21dabd",
+    "hash": "928fc79a2fbf42fd24e6dd4c175c06f0",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -128,8 +128,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "/Users/ikwattro/www/kwark",
-                "reference": "deff0fbe997c4a4bf3f1c68882719ddea866f70d"
+                "url": "https://github.com/neoxygen/kwark.git",
+                "reference": "7a5f79043088232c45816710581c7eb12a4eea4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/neoxygen/kwark/zipball/7a5f79043088232c45816710581c7eb12a4eea4f",
+                "reference": "7a5f79043088232c45816710581c7eb12a4eea4f",
+                "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "4.*",
@@ -165,6 +171,7 @@
                     "Kwark": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -177,12 +184,12 @@
             "description": "Kwark is an open-source Neo4j ReST API Client for PHP 5.4",
             "homepage": "http://www.neoxygen.org/kwark",
             "keywords": [
-                "Api",
-                "Client",
-                "Graph",
-                "Neo4j"
+                "api",
+                "client",
+                "graph",
+                "neo4j"
             ],
-            "time": "2014-08-06 19:23:39"
+            "time": "2014-08-05 21:20:09"
         },
         {
             "name": "symfony/config",
