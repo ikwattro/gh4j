@@ -38,7 +38,8 @@ class ForkEventLoader extends BaseEventLoader
 
 		// The fork is based on a Repository that is owned by a User
 		$q .= ' MERGE (bro_alias:User {name:\''.$this->baseRepoOwner.'\'}) 
-		MERGE (br_alias:Repository {id:toInt('.$this->baseRepoId.'), name:\''.$this->baseRepoName.'\'})-[:OWNED_BY]->(bro_alias) 
+		MERGE (br_alias:Repository {id:toInt('.$this->baseRepoId.'), name:\''.$this->baseRepoName.'\'})
+		MERGE(br_alias)-[:OWNED_BY]->(bro_alias) 
 		MERGE (fork_alias)-[:FORK_OF]->(br_alias)';
 
 		// If the repository the created Fork is based on is also a Fork, we add the Fork label to it
