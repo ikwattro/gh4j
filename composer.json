@@ -7,7 +7,7 @@
     "license": "MIT",
     "require": {
         "symfony/finder": "*",
-        "neoxygen/kwark": "1.0.*@dev"
+        "neoxygen/kwark": "dev-master"
     },
     "autoload": {
         "psr-0": {

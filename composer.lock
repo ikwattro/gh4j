@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "928fc79a2fbf42fd24e6dd4c175c06f0",
+    "hash": "f7d5c392b82abfa3311da1b7af7f85b3",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -11,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "a09915c8319be9420621b9822021c9a8a21a82d5"
+                "reference": "50a80ef0d5fe8786d1786dc7604210580bf881f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a09915c8319be9420621b9822021c9a8a21a82d5",
-                "reference": "a09915c8319be9420621b9822021c9a8a21a82d5",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/50a80ef0d5fe8786d1786dc7604210580bf881f6",
+                "reference": "50a80ef0d5fe8786d1786dc7604210580bf881f6",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +36,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1.x-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -68,7 +69,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-06 20:48:45"
+            "time": "2014-08-08 22:10:18"
         },
         {
             "name": "guzzlehttp/streams",
@@ -76,12 +77,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/streams.git",
-                "reference": "546c9a7df966563be810d825f80187cdadbe18b6"
+                "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/streams/zipball/546c9a7df966563be810d825f80187cdadbe18b6",
-                "reference": "546c9a7df966563be810d825f80187cdadbe18b6",
+                "url": "https://api.github.com/repos/guzzle/streams/zipball/fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
+                "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
                 "shasum": ""
             },
             "require": {
@@ -93,7 +94,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -121,7 +122,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-07-31 19:27:09"
+            "time": "2014-08-10 23:57:01"
         },
         {
             "name": "neoxygen/kwark",
@@ -129,12 +130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/neoxygen/kwark.git",
-                "reference": "7a5f79043088232c45816710581c7eb12a4eea4f"
+                "reference": "735db9b4ec78e9dbc6ef71c3dfa25f726e9dbbd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neoxygen/kwark/zipball/7a5f79043088232c45816710581c7eb12a4eea4f",
-                "reference": "7a5f79043088232c45816710581c7eb12a4eea4f",
+                "url": "https://api.github.com/repos/neoxygen/kwark/zipball/735db9b4ec78e9dbc6ef71c3dfa25f726e9dbbd6",
+                "reference": "735db9b4ec78e9dbc6ef71c3dfa25f726e9dbbd6",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +164,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -189,7 +190,7 @@
                 "graph",
                 "neo4j"
             ],
-            "time": "2014-08-05 21:20:09"
+            "time": "2014-08-09 21:21:27"
         },
         {
             "name": "symfony/config",
@@ -246,12 +247,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "50f77fb648d248bb921321e6fcb43e0a1a9376cc"
+                "reference": "0c91f3355f251dc2ac15d9f9c5e04c014c9b729e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/50f77fb648d248bb921321e6fcb43e0a1a9376cc",
-                "reference": "50f77fb648d248bb921321e6fcb43e0a1a9376cc",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/0c91f3355f251dc2ac15d9f9c5e04c014c9b729e",
+                "reference": "0c91f3355f251dc2ac15d9f9c5e04c014c9b729e",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +295,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-05 09:07:51"
+            "time": "2014-08-08 14:32:04"
         },
         {
             "name": "symfony/dependency-injection",
@@ -732,119 +733,6 @@
             "time": "2014-07-31 22:12:22"
         },
         {
-            "name": "ocramius/instantiator",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/Instantiator.git",
-                "reference": "cc754c2289ffd4483c319f6ed6ee88ce21676f64"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/Instantiator/zipball/cc754c2289ffd4483c319f6ed6ee88ce21676f64",
-                "reference": "cc754c2289ffd4483c319f6ed6ee88ce21676f64",
-                "shasum": ""
-            },
-            "require": {
-                "ocramius/lazy-map": "1.0.*",
-                "php": "~5.3"
-            },
-            "require-dev": {
-                "athletic/athletic": "~0.1.8",
-                "ext-phar": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "2.0.*@ALPHA"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Instantiator\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
-            "homepage": "https://github.com/Ocramius/Instantiator",
-            "keywords": [
-                "constructor",
-                "instantiate"
-            ],
-            "time": "2014-06-15 11:44:46"
-        },
-        {
-            "name": "ocramius/lazy-map",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/LazyMap.git",
-                "reference": "5c77102e225d225ae2d74d5f2cc488527834b821"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/LazyMap/zipball/5c77102e225d225ae2d74d5f2cc488527834b821",
-                "reference": "5c77102e225d225ae2d74d5f2cc488527834b821",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "athletic/athletic": "~0.1.7",
-                "phpmd/phpmd": "1.5.*",
-                "phpunit/phpunit": ">=3.7",
-                "satooshi/php-coveralls": "~0.6",
-                "squizlabs/php_codesniffer": "1.4.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "LazyMap\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A library that provides lazy instantiation logic for a map of objects",
-            "homepage": "https://github.com/Ocramius/LazyMap",
-            "keywords": [
-                "lazy",
-                "lazy instantiation",
-                "lazy loading",
-                "map",
-                "service location"
-            ],
-            "time": "2014-05-01 22:15:23"
-        },
-        {
             "name": "phpunit/php-code-coverage",
             "version": "2.0.x-dev",
             "source": {
@@ -1098,12 +986,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a965789586fcb4dc4eec1778f8dcf2804a97eb5a"
+                "reference": "7e59ad4f12ba212935622088af74fe99390796c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a965789586fcb4dc4eec1778f8dcf2804a97eb5a",
-                "reference": "a965789586fcb4dc4eec1778f8dcf2804a97eb5a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7e59ad4f12ba212935622088af74fe99390796c9",
+                "reference": "7e59ad4f12ba212935622088af74fe99390796c9",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1005,7 @@
                 "phpunit/php-file-iterator": "~1.3.1",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0.2",
-                "phpunit/phpunit-mock-objects": "~2.1",
+                "phpunit/phpunit-mock-objects": "2.1.5",
                 "sebastian/comparator": "~1.0",
                 "sebastian/diff": "~1.1",
                 "sebastian/environment": "~1.0",
@@ -1164,29 +1052,28 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-08-05 22:32:16"
+            "time": "2014-08-13 15:45:27"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "dev-master",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "bc24fb59e997fc48f7cf8c839fe2beaedc76389b"
+                "reference": "7878b9c41edb3afab92b85edf5f0981014a2713a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/bc24fb59e997fc48f7cf8c839fe2beaedc76389b",
-                "reference": "bc24fb59e997fc48f7cf8c839fe2beaedc76389b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7878b9c41edb3afab92b85edf5f0981014a2713a",
+                "reference": "7878b9c41edb3afab92b85edf5f0981014a2713a",
                 "shasum": ""
             },
             "require": {
-                "ocramius/instantiator": "~1.0",
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": "~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*@dev"
+                "phpunit/phpunit": "~4.1"
             },
             "suggest": {
                 "ext-soap": "*"
@@ -1194,7 +1081,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -1222,7 +1109,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-08-02 13:51:34"
+            "time": "2014-06-12 07:22:15"
         },
         {
             "name": "psr/log",
@@ -1338,21 +1225,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "ac84cfdec593945f36f24074d6ea17d296e86f76"
+                "reference": "2bbf893712032f479b11afd9f3af68abb552aff7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/ac84cfdec593945f36f24074d6ea17d296e86f76",
-                "reference": "ac84cfdec593945f36f24074d6ea17d296e86f76",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/2bbf893712032f479b11afd9f3af68abb552aff7",
+                "reference": "2bbf893712032f479b11afd9f3af68abb552aff7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "~4.2"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1366,13 +1256,12 @@
             ],
             "authors": [
                 {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
-                },
-                {
                     "name": "Kore Nordmann",
                     "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Diff implementation",
@@ -1380,7 +1269,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2014-05-12 05:21:40"
+            "time": "2014-08-10 08:30:31"
         },
         {
             "name": "sebastian/environment",
@@ -1536,17 +1425,12 @@
             "time": "2014-03-07 15:35:33"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "neoxygen/kwark": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
 }
