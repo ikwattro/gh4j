@@ -62,18 +62,18 @@ class PullRequestEventLoader extends BaseEventLoader
 
 		// If a new PR is opened :
 		if ($this->prAction == 'opened') {
-			$q .= 'MERGE (ev_alias)-[:PR_OPEN]->(pr_alias)';
+			$q .= 'MERGE (ev)-[:PR_OPEN]->(pr_alias)';
 		}
 
 		// If a PR is closed but not merged
 		if ($this->prAction == 'closed' && false === $this->merged) {
-			$q .= 'MERGE (ev_alias)-[:PR_CLOSE]->(pr_alias)';
+			$q .= 'MERGE (ev)-[:PR_CLOSE]->(pr_alias)';
 		}
 
 		// If a PR is closed and merged
 		if ($this->prAction == 'closed' && true === $this->merged) {
-			$q .= 'MERGE (ev_alias)-[:PR_CLOSE]->(pr_alias)
-			MERGE (ev_alias)-[:PR_MERGE]->(pr_alias)';
+			$q .= 'MERGE (ev)-[:PR_CLOSE]->(pr_alias)
+			MERGE (ev)-[:PR_MERGE]->(pr_alias)';
 		}
 
 		// If it is not a PR opening action, we can guess by whom and when the PR was opened

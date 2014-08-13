@@ -48,7 +48,7 @@ class PushEventLoader extends BaseEventLoader
 		$q .= 'MERGE (branch_alias:Branch {ref:\''.$this->pushedBranch.'\', repo_id:toInt('.$this->baseRepoId.')}) ';
 
 		// Create relations between Event and Branch && between Branch and Repository
-		$q .= 'MERGE (ev_alias)-[:PUSH_TO]->(branch_alias) 
+		$q .= 'MERGE (ev)-[:PUSH_TO]->(branch_alias) 
 		MERGE (branch_alias)-[:BRANCH_OF]->(repo_alias) ';
 
 		// If the owner of the repository doesnt exist, create it and create the owned by relation

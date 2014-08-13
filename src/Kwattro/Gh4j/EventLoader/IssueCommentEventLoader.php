@@ -39,7 +39,7 @@ class IssueCommentEventLoader extends BaseEventLoader
 
 		// Let's create our IssueComment Node and relate the Event to it
 		$q = 'MERGE (comment_alias:IssueComment {id:toInt('.$this->commentId.')}) 
-		MERGE (ev_alias)-[:ISSUE_COMMENT]->(comment_alias)';
+		MERGE (ev)-[:ISSUE_COMMENT]->(comment_alias)';
 
 		// Match/create the Issue Node
 		$q .= 'MERGE (issue_alias:Issue {id:toInt('.$this->issueId.')}) ';
