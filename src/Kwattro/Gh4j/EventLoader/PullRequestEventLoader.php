@@ -15,6 +15,9 @@ class PullRequestEventLoader extends BaseEventLoader
 	private $merged;
 	private $pullRequest;
 	private $pullRequestState;
+	private $comingRef;
+	private $repoId;
+	private $repoName;
 
 	public function getEventLoadQuery(array $event)
 	{
@@ -38,6 +41,11 @@ class PullRequestEventLoader extends BaseEventLoader
 		$this->originalRepoName = $event['payload']['pull_request']['base']['repo']['name'];
 		$this->merged = $event['payload']['pull_request']['merged'];
 		$this->pullRequest = $event['payload']['pull_request'];
+		$ref = $event['payload']['pull_request']['head']['ref'];
+		$longref = 'refs/heads/'.$ref;
+		$this->comingRef = $longref;
+		$this->repoId = $event['payload']['pull_request']['head']['repo']['id'];
+		$this->repoName = $event['payload']['pull_request']['head']['repo']['name'];
 
 		$state = $this->pullRequest['state'];
 		if ($state == 'closed' && $this->merged == true) {
@@ -95,6 +103,14 @@ class PullRequestEventLoader extends BaseEventLoader
 		MERGE (original_repo_alias:Repository {id:toInt('.$this->originalRepoId.'), name:\''.$this->originalRepoName.'\'})
 		MERGE (original_repo_alias)-[:OWNED_BY]->(original_repo_owner_alias)
 		MERGE (pr_alias)-[:PR_ON_REPO]->(original_repo_alias)';
+
+		// Matching/Creating from which Fork and Branch the PR is made
+		$q .= 'MERGE (branch:Branch {ref:\''.$this->comingRef.'\', repo_id:toInt('.$this->repoId.')}) 
+		MERGE (fromRepo:Repository {id:toInt('.$this->repoId.')}) 
+		ON CREATE SET fromRepo.name = \''.$this->repoName.'\' 
+		MERGE (branch)-[:BRANCH_OF]->(fromRepo)
+		MERGE (fromRepo)-[:OWNED_BY]->(u) 
+		MERGE (pr_alias)-[:FROM_BRANCH]->(branch)';
 
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}
