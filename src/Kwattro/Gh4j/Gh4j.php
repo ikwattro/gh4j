@@ -28,7 +28,7 @@ class Gh4j
 		return $this->connector;
 	}
 
-	public function loadEvent($event, $inStack = false)
+	public function loadEvent($event, $inStack = false, $returnQuery = false)
 	{
 		if ($ev = $this->validateJSON($event)) {
 
@@ -36,6 +36,9 @@ class Gh4j
 
 			if ($loader instanceof BaseEventLoader) {
 				$query = $loader->getEventLoadQuery($ev);
+				if ($returnQuery) {
+					return $query;
+				}
 				if ($inStack) {
 				return $this->connector->addToParallelStack($query);
 			}
