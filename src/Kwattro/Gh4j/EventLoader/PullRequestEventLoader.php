@@ -18,6 +18,9 @@ class PullRequestEventLoader extends BaseEventLoader
 	private $comingRef;
 	private $repoId;
 	private $repoName;
+	private $repoIsFork;
+	private $baseRepoId;
+	private $baseRepoName;
 
 	public function getEventLoadQuery(array $event)
 	{
@@ -46,6 +49,9 @@ class PullRequestEventLoader extends BaseEventLoader
 		$this->comingRef = $longref;
 		$this->repoId = $event['payload']['pull_request']['head']['repo']['id'];
 		$this->repoName = $event['payload']['pull_request']['head']['repo']['name'];
+		$this->repoIsFork = $event['payload']['pull_request']['head']['repo']['fork'];
+		$this->baseRepoId = $event['payload']['pull_request']['base']['repo']['id'];
+		$this->baseRepoName = $event['payload']['pull_request']['base']['repo']['name'];
 
 		$state = $this->pullRequest['state'];
 		if ($state == 'closed' && $this->merged == true) {
@@ -111,6 +117,13 @@ class PullRequestEventLoader extends BaseEventLoader
 		MERGE (branch)-[:BRANCH_OF]->(fromRepo)
 		MERGE (fromRepo)-[:OWNED_BY]->(u) 
 		MERGE (pr_alias)-[:FROM_BRANCH]->(branch)';
+
+		if ($this->repoIsFork) {
+			$q .= 'SET fromRepo :Fork 
+			MERGE (forkOf:Repository {id:toInt('.$this->baseRepoId.')}) 
+			ON CREATE SET forkOf.name = \''.$this->baseRepoName.'\' 
+			MERGE (fromRepo)-[:FORK_OF]->(forkOf)';
+		}
 
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}
