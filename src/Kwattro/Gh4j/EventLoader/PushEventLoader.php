@@ -41,7 +41,7 @@ class PushEventLoader extends BaseEventLoader
 		$owner = $this->getAlias('owner');
 
 		//If the base repo is a fork, first look for a fork
-		if ($this->baseRepoIsFork) {
+		if ($this->baseRepoIsFork == true) {
 			$q = 'MERGE (fork_alias:Repository:Fork {name:\''.$this->baseRepoName.'\', owned_by:\''.$this->actor.'\'}) 
 			ON CREATE SET fork_alias.id = toInt('.$this->baseRepoId.')';
 		} else {
