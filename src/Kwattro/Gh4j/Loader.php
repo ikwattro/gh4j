@@ -50,6 +50,7 @@ class Loader
 				return $this->loadedEventLoaders[$eventType];
 				break;
 			case 'ForkEvent':
+			return new ForkEventLoader();
 				if (!array_key_exists($eventType, $this->loadedEventLoaders)) {
 					$loader = new ForkEventLoader();
 					$this->loadedEventLoaders[$eventType] = $loader;
