@@ -40,9 +40,18 @@ class PushEventLoader extends BaseEventLoader
 		$branch = $this->getAlias('branch');
 		$owner = $this->getAlias('owner');
 
-		// If repository doesnt exist create it
+		//If the base repo is a fork, first look for a fork
+		if ($this->baseRepoIsFork) {
+			$q = 'MERGE (fork_alias:Repository:Fork {name:\''.$this->baseRepoName.'\', owned_by:\''.$this->actor.'\'}) 
+			ON CREATE SET fork_alias.id = toInt('.$this->baseRepoId.')';
+		} else {
+			// If repository doesnt exist create it
 		$q = 'MERGE (repo_alias:Repository {id:toInt('.$this->baseRepoId.')}) 
 		SET repo_alias.name=\''.$this->baseRepoName.'\'';
+		}
+		
+
+		
 
 		// If Branch pushed to doesnt exist, create it
 		$q .= 'MERGE (branch_alias:Branch {ref:\''.$this->pushedBranch.'\', repo_id:toInt('.$this->baseRepoId.')}) ';
@@ -54,11 +63,6 @@ class PushEventLoader extends BaseEventLoader
 		// If the owner of the repository doesnt exist, create it and create the owned by relation
 		$q .= 'MERGE (owner_alias:User {name:\''.$this->baseRepoOwner.'\'}) 
 		MERGE (repo_alias)-[:OWNED_BY]->(owner_alias) ';
-
-		// If the repository of the pushed branch is also a Fork, we add the Fork label to it
-		if ($this->baseRepoIsFork == true) {
-			$q .= ' SET repo_alias :Fork';
-		}
 
 		return $this->getCommonEventPayloadQuery().' '.$q;
 	}

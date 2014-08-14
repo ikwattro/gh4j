@@ -33,7 +33,8 @@ class ForkEventLoader extends BaseEventLoader
 	public function buildQuery()
 	{
 		// We create the new Fork, which is also a repository in itself, then we relate the FORK event to the Fork
-		$q = 'CREATE (fork_alias:Fork:Repository {name:\''.$this->baseRepoName.'\'}) 
+		$q = 'MERGE (fork_alias:Fork:Repository {name:\''.$this->baseRepoName.'\'})
+		ON CREATE SET fork_alias.owned_by = u.name
 		MERGE (ev)-[:FORK]->(fork_alias)-[:OWNED_BY]->(u)';
 
 		// The fork is based on a Repository that is owned by a User
