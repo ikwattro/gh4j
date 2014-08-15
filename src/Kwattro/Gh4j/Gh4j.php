@@ -17,7 +17,7 @@ class Gh4j
 	public function __construct()
 	{
 		$this->connector = new Kwark();
-        $this->connector->initalizeApi();
+        $this->connector->initializeApi();
 
 		$this->loader = new Loader();
 		$this->validator = new JSONValidator();
