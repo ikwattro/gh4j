@@ -31,6 +31,7 @@ class Gh4j
 	public function loadEvent($event, $inStack = false, $returnQuery = false)
 	{
 		if ($ev = $this->validateJSON($event)) {
+			
 
 			$loader = $this->loader->getEventLoader($ev);
 

@@ -1,6 +1,8 @@
+.DS_Store
 vendor/
 data/
 index.php
 /.idea
 test.php
 tests/_reports/*
+import.php

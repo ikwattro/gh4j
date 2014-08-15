@@ -21,6 +21,7 @@ class PullRequestEventLoader extends BaseEventLoader
 	private $repoIsFork;
 	private $baseRepoId;
 	private $baseRepoName;
+	private $fromRepoOwner;
 
 	public function getEventLoadQuery(array $event)
 	{
@@ -52,6 +53,7 @@ class PullRequestEventLoader extends BaseEventLoader
 		$this->repoIsFork = $event['payload']['pull_request']['head']['repo']['fork'];
 		$this->baseRepoId = $event['payload']['pull_request']['base']['repo']['id'];
 		$this->baseRepoName = $event['payload']['pull_request']['base']['repo']['name'];
+		$this->fromRepoOwner = $event['payload']['pull_request']['head']['repo']['owner']['login'];
 
 		$state = $this->pullRequest['state'];
 		if ($state == 'closed' && $this->merged == true) {
@@ -98,7 +100,7 @@ class PullRequestEventLoader extends BaseEventLoader
 
 			$q .= 'MERGE (pr_alias)<-[:PR_OPEN]-(pr_opener_alias:PullRequestEvent)
 			ON CREATE SET pr_opener_alias.time = toInt('.$openingTime->getTimestamp().') 
-			WITH pr_alias, pr_opener_alias';
+			WITH pr_alias, pr_opener_alias, u';
 			$q .= ' MATCH (pr_alias)<-[:PR_OPEN]-(pr_opening_event_alias:PullRequestEvent) 
 			MERGE (opener_alias:User {name:\''.$opener.'\'}) 
 			MERGE (pr_opening_event_alias)<-[:DO]-(opener_alias)';
@@ -113,15 +115,18 @@ class PullRequestEventLoader extends BaseEventLoader
 		// Matching/Creating from which Fork and Branch the PR is made
 		$q .= 'MERGE (branch:Branch {ref:\''.$this->comingRef.'\', repo_id:toInt('.$this->repoId.')}) 
 		MERGE (fromRepo:Repository {id:toInt('.$this->repoId.')}) 
-		ON CREATE SET fromRepo.name = \''.$this->repoName.'\' 
+		ON CREATE SET fromRepo.name = \''.$this->repoName.'\'
+		WITH branch, fromRepo, u, pr_alias
 		MERGE (branch)-[:BRANCH_OF]->(fromRepo)
-		MERGE (fromRepo)-[:OWNED_BY]->(u) 
+		MERGE (fromRepoOwner:User{name:\''.$this->fromRepoOwner.'\'})
+		MERGE (fromRepo)-[:OWNED_BY]->(fromRepoOwner) 
 		MERGE (pr_alias)-[:FROM_BRANCH]->(branch)';
 
 		if ($this->repoIsFork) {
 			$q .= 'SET fromRepo :Fork 
 			MERGE (forkOf:Repository {id:toInt('.$this->baseRepoId.')}) 
-			ON CREATE SET forkOf.name = \''.$this->baseRepoName.'\' 
+			ON CREATE SET forkOf.name = \''.$this->baseRepoName.'\'
+			WITH fromRepo, forkOf
 			MERGE (fromRepo)-[:FORK_OF]->(forkOf)';
 		}
 
