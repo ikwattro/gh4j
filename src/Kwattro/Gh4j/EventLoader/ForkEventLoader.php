@@ -9,6 +9,7 @@ class ForkEventLoader extends BaseEventLoader
 	private $baseRepoOwner;
 	private $baseRepoIsFork;
 	private $baseRepoLanguage;
+	private $forkRepoUrl;
 
 
 
@@ -27,14 +28,17 @@ class ForkEventLoader extends BaseEventLoader
 		$this->baseRepoName = $repository['name'];
 		$this->baseRepoOwner = $repository['owner'];
 		$this->baseRepoIsFork = $repository['fork'];
+		$this->forkRepoUrl = $event['url'];
+		//var_dump($this->forkRepoUrl);
 		
 	}
 
 	public function buildQuery()
 	{
 		// We create the new Fork, which is also a repository in itself, then we relate the FORK event to the Fork
-		$q = 'MERGE (fork_alias:Fork:Repository {name:\''.$this->baseRepoName.'\'})
+		$q = 'MERGE (fork_alias:Fork:Repository {name:\''.$this->baseRepoName.'\', owned_by:\''.$this->actor.'\'})
 		ON CREATE SET fork_alias.owned_by = u.name
+		SET fork_alias.html_url =\''.$this->forkRepoUrl.'\' 
 		WITH ev, u, fork_alias
 		MERGE (ev)-[:FORK]->(fork_alias)-[:OWNED_BY]->(u)';
 

@@ -47,8 +47,7 @@ class BaseEventLoader
 		$this->repository['name'] = $event['repository']['name'];
 
 		$q = 'MERGE (u:User {name:\''.$this->actor.'\'})
-		CREATE (ev:'.$this->eventName.' {time:toInt('.$this->createdAt->getTimestamp().') })
-		MERGE (u)-[:DO]->(ev)';
+		MERGE (u)-[:DO]->(ev:'.$this->eventName.' {time:toInt('.$this->createdAt->getTimestamp().') })';
 
 		$this->commonQuery = $q;
 	}
