@@ -44,7 +44,7 @@ class PushEventLoader extends BaseEventLoader
 		if ($this->baseRepoIsFork == true) {
 			$q = 'MERGE (repo_alias:Repository:Fork {name:\''.$this->baseRepoName.'\', owned_by:\''.$this->actor.'\'}) 
 			ON CREATE SET repo_alias.id = toInt('.$this->baseRepoId.')
-			WITH repo_alias, ev, u';
+			WITH repo_alias, ev, u ';
 		} else {
 			// If repository doesnt exist create it
 		$q = 'MERGE (repo_alias:Repository {id:toInt('.$this->baseRepoId.')}) 

@@ -32,7 +32,7 @@ Add the following requirement to your `composer.json` file :
 ```json
 "require":{
 	// ..... other dependencies
-	"kwattro/gh4j" : "*"
+	"kwattro/gh4j" : "dev-master"
 }
 ```
 
